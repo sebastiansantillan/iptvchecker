@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run IPTV Checker",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "iptv_checker.py",
+                "${input:m3uFile}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "m3uFile",
+            "type": "promptString",
+            "description": "Enter the path to your M3U file:",
+            "default": "playlist.m3u"
+        }
+    ]
+}
